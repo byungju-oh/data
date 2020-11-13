@@ -1,55 +1,41 @@
-google.charts.load('current', {'packages':['scatter']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart () {
-
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'Hours Studied');
-  data.addColumn('number', '');
-
-  data.addRows([
-    
-[500,5221],
-[490,1879],
-[380,1265],
-[460,1617],
-[385,3985],
-[350,1581],
-[425,3227],
-[390,1634],
-[405,1906],
-[450,858],
-[370,2003],
-[435,1780],
-[425,1935],
-[450,2121],
-[510,2835],
-[395,2679],
-[390,3003],
-[475,1586],
-[370,2775],
-[430,2495],
-[385,2063],
-[430,2962],
-[435,1471],
-[345,1544],
-[400,1068],
-
-
-  ]);
-
-  var options = {
-    width: 800,
-    height: 500,
-    chart: {
-      title: '평균소득과 cctv',
-      
+Highcharts.chart('container', {
+    colorAxis: {
+        minColor: '#FFFFFF',
+        maxColor: Highcharts.getOptions().colors[0]
     },
-    hAxis: {title: '평균소득'},
-    vAxis: {title: 'cctv수'}
-  };
+    series: [{
+        type: 'treemap',
+        layoutAlgorithm: 'squarified',
+        data: 
 
-  var chart = new google.charts.Scatter(document.getElementById('scatterchart_material'));
-
-  chart.draw(data, google.charts.Scatter.convertOptions(options));
-}
+[{name:"강남구",value:5221,colorValue:500},
+{name:"강동구",value:1879,colorValue:490},
+{name:"강북구",value:1265,colorValue:380},
+{name:"강서구",value:1617,colorValue:460},
+{name:"관악구",value:3985,colorValue:385},
+{name:"광진구",value:1581,colorValue:350},
+{name:"구로구",value:3227,colorValue:425},
+{name:"금천구",value:1634,colorValue:390},
+{name:"노원구",value:1906,colorValue:405},
+{name:"도봉구",value:858,colorValue:450},
+{name:"동대문구",value:2003,colorValue:370},
+{name:"동작구",value:1780,colorValue:435},
+{name:"마포구",value:1935,colorValue:425},
+{name:"서대문구",value:2121,colorValue:450},
+{name:"서초구",value:2835,colorValue:510},
+{name:"성동구",value:2679,colorValue:395},
+{name:"성북구",value:3003,colorValue:390},
+{name:"송파구",value:1586,colorValue:475},
+{name:"양천구",value:2775,colorValue:370},
+{name:"영등포구",value:2495,colorValue:430},
+{name:"용산구",value:2063,colorValue:385},
+{name:"은평구",value:2962,colorValue:430},
+{name:"종로구",value:1471,colorValue:435},
+{name:"중구",value:1544,colorValue:345},
+{name:"중랑구",value:1068,colorValue:400,
+}]
+    }],
+    title: {
+        text: 'Highcharts Treemap'
+    }
+});

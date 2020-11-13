@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<style>
+    .highcharts-figure, .highcharts-data-table table {
+    min-width: 360px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+</style>
+
+    <title>Document</title>
+    <nav>
+        <ul> 
+            <li><a href="hicv.html">가설1</a>
+           </li> <li><a href="cri.html">가설2</a>
+           </li> <li><a href="hicv.html">가설3</a></li> 
+           <li><a href="#">Locations</a></li> 
+           <li><a href="#">Blog</a></li> 
+       </ul> 
+   </nav>
+   <nav>
+    <ul> 
+        <li><a href="cri2.html">가설2-2</a>
+       
+</nav>
+</head>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    
+</figure>
+<script>
+    function getPointCategoryName(point, dimension) {
+    var series = point.series,
+        isY = dimension === 'y',
+        axis = series[isY ? 'yAxis' : 'xAxis'];
+    return axis.categories[point[isY ? 'y' : 'x']];
+}
+
+Highcharts.chart('container', {
+
+    chart: {
+        type: 'heatmap',
+        marginTop: 40,
+        marginBottom: 80,
+        plotBorderWidth: 1
+    },
+
+
+    title: {
+        text: 'cctv증감에따른 범죄상관관계'
+    },
+
+    xAxis: {
+        categories: ['CCTV', '절도', '강간강제추행', '살인', '폭력','강도','합계']
+    },
+
+    yAxis: {
+        categories: ['CCTV', '절도', '강간강제추행', '살인', '폭력','강도','합계'],
+        title: null,
+        reversed: true
+    },
+
+    accessibility: {
+        point: {
+            descriptionFormatter: function (point) {
+                var ix = point.index + 1,
+                    xName = getPointCategoryName(point, 'x'),
+                    yName = getPointCategoryName(point, 'y'),
+                    val = point.value;
+                return ix + '. ' + xName + ' sales ' + yName + ', ' + val + '.';
+            }
+        }
+    },
+
+    colorAxis: {
+        min: -1,
+        minColor: '#D2B4DE',
+        maxColor: '#F9E79F'
+    },
+
+    legend: {
+        align: 'right',
+        layout: 'vertical',
+        margin: 0,
+        verticalAlign: 'top',
+        y: 25,
+        symbolHeight: 280
+    },
+
+    tooltip: {
+        formatter: function () {
+            return '<b>' + getPointCategoryName(this.point, 'x') + '</b> sold <br><b>' +
+                this.point.value + '</b> items on <br><b>' + getPointCategoryName(this.point, 'y') + '</b>';
+        }
+    },
+
+    
+
+
+    series: [{
+        name: 'Sales per employee',
+        borderWidth: 1,
+        data: [[0,0,1],[1,1,1],[2,2,1],[3,3,1],[4,4,1],[5,5,1],[6,6,1],
+    [0,1,-0.783131],[1,0,-0.783131],[0,2,0.634435],[2,0,0.634435],
+[0,3,-0.886872],[3,0,-0.886872],[0,4,-0.968742],[4,0,-0.968742],
+[0,5,-0.926825],[5,0,-0.926825],[0,6,-0.907947],[6,0,-0.907947],
+[1,2,-0.890046],[2,1,-0.890046],[1,3,0.910969],[3,1,0.910969],
+[1,4,0.827362],[4,1,0.827361],[1,5,0.886130],[5,1,0.886130],
+[1,6,0.963400],[6,1,0.963400],[2,3,-0.848968],[3,2,-0.848968],
+[2,4,-0.693350],[4,2,-0.693350],[2,5,-0.801193],[5,2,-0.801193],
+[2,6,-0.826297],[6,2,-0.826297],[3,4,0.842002],[4,3,0.842002],
+[3,5,0.862675],[5,3,0.862675],[3,6,0.916902],[6,3,0.916902],
+[4,5,0.983584],[5,4,0.983584],[4,6,0.947050],[6,4,0.947050],
+[5,6,0.970281],[6,5,0.970281]],
+        dataLabels: {
+            enabled: true,
+            color: '#000000'
+        }
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                yAxis: {
+                    labels: {
+                        formatter: function () {
+                            return this.value.charAt(0);
+                        }
+                    }
+                }
+            }
+        }]
+    }
+
+});
+</script>
+
+<body>
+    
+</body>
+</html>

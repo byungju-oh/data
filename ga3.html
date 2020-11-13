@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="scatterchart_material"></div>
+       <nav>
+        <ul> 
+            <li><a href="hicv.html">가설1</a>
+           </li> <li><a href="cri.html">가설2</a>
+           </li> <li><a href="ga3.html">가설3</a></li> 
+           <li><a href="#">Locations</a></li> 
+           <li><a href="#">Blog</a></li> 
+       </ul> 
+   </nav>
+    <title>Document</title>
+    
+    
+</head>
+
+<body>
+
+    <script>
+        google.charts.load('current', {'packages':['scatter']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart () {
+  
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', 'Hours Studied');
+          data.addColumn('number', '');
+  
+          data.addRows([
+            
+  
+         
+  
+  
+    [5221,3663],
+    [1879,2178],
+    [1265,2427],
+    [1617,2560],
+    [3985,2684],
+    [1581,1859],
+    [3227,2555],
+    [1634,1789],
+    [1906,2467],
+    [858,1229],
+    [2003,1987],
+    [1780,1817],
+    [1935,2155],
+    [2121,1540],
+    [2835,2651],
+    [2679,1403],
+    [3003,1616],
+    [1586,3002],
+    [2775,1604],
+    [2495,3045],
+    [2063,2039],
+    [2962,2118],
+    [1471,2089],
+    [1544,1928],
+    [1068,2454],
+    
+  
+    
+  
+          ]);
+  
+          var options = {
+            width: 800,
+            height: 500,
+            chart: {
+              title: 'cctv와 우발적범죄',
+              
+            },
+            hAxis: {title: '우발범죄발생'},
+            vAxis: {title: 'cctv수'}
+          };
+  
+          var chart = new google.charts.Scatter(document.getElementById('scatterchart_material'));
+  
+          chart.draw(data, google.charts.Scatter.convertOptions(options));
+        }
+      </script>
+</body>
+</html>

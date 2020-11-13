@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="scatterchart_material"></div>
+    <title>Document</title>
+    <nav>
+        <ul> 
+            <li><a href="hicv.html">가설1</a>
+           </li> <li><a href="cri.html">가설2</a>
+           </li> <li><a href="hicv.html">가설3</a></li> 
+           <li><a href="#">Locations</a></li> 
+           <li><a href="#">Blog</a></li> 
+       </ul> 
+   </nav>
+    <script>
+      google.charts.load('current', {'packages':['scatter']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart () {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Hours Studied');
+        data.addColumn('number', '');
+
+        data.addRows([
+          
+
+  [5221,3641],
+  [1879,1836],
+  [1265,1411],
+  [1617,2364],
+  [3985,2644],
+  [1581,2152],
+  [3227,2152],
+  [1634,1316],
+  [1906,1686],
+  [858,881],
+  [2003,1705],
+  [1780,1583],
+  [1935,2687],
+  [2121,1403],
+  [2835,2891],
+  [2679,1109],
+  [3003,1261],
+  [1586,2696],
+  [2775,1610],
+  [2495,2775],
+  [2063,1274],
+  [2962,1762],
+  [1471,1757],
+  [1544,2399],
+  [1068,1814],
+  
+
+        ]);
+
+        var options = {
+          width: 800,
+          height: 500,
+          chart: {
+            title: 'cctv와 계획범죄',
+            
+          },
+          hAxis: {title: '계획범죄발생'},
+          vAxis: {title: 'cctv수'}
+        };
+
+        var chart = new google.charts.Scatter(document.getElementById('scatterchart_material'));
+
+        chart.draw(data, google.charts.Scatter.convertOptions(options));
+      }
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

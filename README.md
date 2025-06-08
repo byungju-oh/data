@@ -1,155 +1,167 @@
-# Seoul CCTV and Crime Analysis 📊
+물론입니다! 아래는 위의 **서울 CCTV와 범죄 분석** 프로젝트의 한글 번역본입니다:
 
-A data visualization project analyzing the correlation between CCTV installations and crime rates across Seoul's 25 districts.
+---
 
-## 🎯 Project Overview
+# 서울 CCTV 및 범죄 분석 📊
 
-This project visually analyzes the relationship between the number of CCTV installations and various crime occurrence rates across Seoul's 25 districts. The goal is to establish hypotheses and validate them through data-driven insights.
+서울 25개 자치구의 CCTV 설치 현황과 범죄율 간의 상관관계를 시각적으로 분석한 데이터 분석 및 시각화 프로젝트입니다.
 
-## 📋 Research Hypotheses
+## 🎯 프로젝트 개요
 
-### Hypothesis 1: Income and CCTV Installation Status
-- **Hypothesis 1**: Districts with higher average income will have more CCTV installations
-- **Hypothesis 1-1**: Correlation analysis between income and CCTV count
+본 프로젝트는 서울의 각 자치구별 CCTV 설치 수와 다양한 범죄 발생률 간의 관계를 시각화하고 분석합니다. 데이터 기반 통찰을 통해 가설을 수립하고 이를 검증하는 것이 목적입니다.
 
-### Hypothesis 2: CCTV and Premeditated Crime
-- **Hypothesis 2**: Correlation between CCTV installations and premeditated crimes (theft, sexual assault, murder)
-- **Hypothesis 2-1**: Scatter plot analysis of CCTV vs. premeditated crime incidents
-- **Hypothesis 2-2**: Correlation coefficient heatmap analysis
+## 📋 연구 가설
 
-### Hypothesis 3: CCTV and Impulsive Crime
-- **Hypothesis 3**: Analysis of the relationship between CCTV and impulsive crime rates
+### 가설 1: 소득 수준과 CCTV 설치
 
-## 🗂️ File Structure
+* **가설 1**: 평균 소득이 높은 지역일수록 CCTV 설치 수가 많을 것이다.
+* **가설 1-1**: 소득과 CCTV 수의 상관관계 분석
+
+### 가설 2: 계획 범죄와 CCTV
+
+* **가설 2**: CCTV 설치 수와 계획 범죄(절도, 성범죄, 살인 등) 간의 상관관계
+* **가설 2-1**: CCTV와 계획 범죄 간의 산점도 분석
+* **가설 2-2**: 상관계수 히트맵 분석
+
+### 가설 3: 충동 범죄와 CCTV
+
+* **가설 3**: CCTV 설치 수와 충동 범죄(폭력, 강도 등) 간의 관계 분석
+
+## 🗂️ 파일 구조
 
 ```
-├── index.html          # Main page
-├── hicv.html           # Hypothesis 1: Income-CCTV treemap
-├── cctv.html           # Hypothesis 1-1: Income-CCTV scatter plot
-├── cri.html            # Hypothesis 2: Premeditated crime correlation heatmap
-├── cri2.html           # Hypothesis 2-1: Premeditated crime scatter plot
-├── ga3.html            # Hypothesis 3: Impulsive crime scatter plot
-├── fi.html             # Additional 2: Correlation coefficient matrix
-├── 22.html             # Additional 1: Time series analysis (2015-2019)
-├── 223.html            # Additional: Overall crime time series
-├── geo.html            # Map visualization
-├── bo.html             # Mapbox-based regional data
-└── cctv.js             # Chart configuration script
+├── index.html          # 메인 페이지
+├── hicv.html           # 가설 1: 소득-CCTV 트리맵
+├── cctv.html           # 가설 1-1: 소득-CCTV 산점도
+├── cri.html            # 가설 2: 계획 범죄 히트맵
+├── cri2.html           # 가설 2-1: 계획 범죄 산점도
+├── ga3.html            # 가설 3: 충동 범죄 산점도
+├── fi.html             # 보조 2: 상관계수 행렬
+├── 22.html             # 보조 1: 범죄 시간 시계열(2015-2019)
+├── 223.html            # 전체 범죄 시계열 분석
+├── geo.html            # 지역별 지도 시각화
+├── bo.html             # Mapbox 기반 지역 데이터 시각화
+└── cctv.js             # 차트 설정 스크립트
 ```
 
-## 🛠️ Technologies Used
+## 🛠️ 사용 기술
 
-- **HTML5/CSS3**: Web page structure and styling
-- **JavaScript**: Interactive chart implementation
-- **Google Charts**: Scatter plots, combo charts, time series analysis
-- **Highcharts**: Heatmaps, treemaps, correlation matrices
-- **Mapbox GL JS**: Geographic data visualization
+* **HTML5/CSS3**: 웹 페이지 구성 및 스타일링
+* **JavaScript**: 차트 및 상호작용 구현
+* **Google Charts**: 산점도, 콤보 차트, 시계열 분석
+* **Highcharts**: 히트맵, 트리맵, 상관계수 행렬
+* **Mapbox GL JS**: 지리 정보 시각화
 
-## 📊 Key Visualizations
+## 📊 주요 시각화
 
-### 1. Treemap (Income-based CCTV Status)
-- CCTV count represented by box size
-- Average income represented by color intensity
+### 1. 트리맵 (소득 기반 CCTV 현황)
 
-### 2. Scatter Plot Analysis
-- Correlation between CCTV count and various crime rates
-- Linear regression analysis of relationships
+* 박스 크기로 CCTV 설치 수 표현
+* 색상 진하기로 평균 소득 표현
 
-### 3. Heatmap (Correlation Coefficient Matrix)
-- Inter-variable correlation coefficients represented by colors
-- Range from -1 (strong negative correlation) to +1 (strong positive correlation)
+### 2. 산점도 분석
 
-### 4. Time Series Analysis (2015-2019)
-- Crime rate changes following CCTV installation increases
-- Combination of bar charts and line graphs
+* CCTV 설치 수와 범죄 발생률 간의 관계 시각화
+* 선형 회귀선을 통한 추세 분석 포함
 
-### 5. Map Visualization
-- Seoul district-wise data display using Mapbox
-- Geographic pattern analysis
+### 3. 히트맵 (상관계수 행렬)
 
-## 📈 Analysis Results
+* 변수 간 상관관계 시각화
+* -1 \~ +1 범위로 색상 차등 표현
 
-### Key Findings
-1. **Income and CCTV**: High-income areas (Gangnam-gu, Seocho-gu) show higher CCTV installation counts
-2. **Premeditated Crime and CCTV**: Most premeditated crimes show negative correlation with CCTV
-3. **Time Series Analysis**: Trend of increasing CCTV and decreasing crime from 2015-2019
+### 4. 시계열 분석 (2015–2019)
 
-### Correlation Coefficient Summary
-- CCTV vs. Theft: -0.783 (strong negative correlation)
-- CCTV vs. Violence: -0.969 (very strong negative correlation)
-- CCTV vs. Robbery: -0.927 (very strong negative correlation)
+* CCTV 설치 증가에 따른 범죄율 변화 시각화
+* 막대그래프와 선 그래프 결합
 
-## 🚀 Getting Started
+### 5. 지도 시각화
 
-1. Clone the repository
+* 자치구별 CCTV 및 범죄 데이터 지도 기반 표현
+* 공간적 패턴 확인 가능
+
+## 📈 분석 결과
+
+### 주요 인사이트
+
+1. **소득과 CCTV**: 강남구, 서초구 등 고소득 지역일수록 CCTV 설치 수가 많음
+2. **계획 범죄와 CCTV**: 대부분의 계획 범죄와 CCTV 수는 음의 상관관계를 가짐
+3. **시계열 분석**: 2015\~2019년 사이 CCTV 증가와 범죄 감소 추세 확인
+
+### 상관계수 요약
+
+* CCTV vs. 절도: **-0.783** (강한 음의 상관관계)
+* CCTV vs. 폭력: **-0.969** (매우 강한 음의 상관관계)
+* CCTV vs. 강도: **-0.927** (매우 강한 음의 상관관계)
+
+## 🚀 실행 방법
+
+1. 프로젝트 클론
+
 ```bash
 git clone [repository-url]
 cd seoul-cctv-crime-analysis
 ```
 
-2. Start a web server (Python example)
+2. 간단한 웹 서버 실행 (Python 사용 예시)
+
 ```bash
 python -m http.server 8000
 ```
 
-3. Open `http://localhost:8000` in your browser
+3. 브라우저에서 `http://localhost:8000` 접속
 
-## 📋 Data Sources
+## 📋 데이터 출처
 
-- Seoul Open Data Plaza
-- Seoul District-wise CCTV Installation Status
-- Seoul District-wise Crime Statistics
-- Seoul District-wise Average Income Data
+* 서울 열린데이터 광장
+* 자치구별 CCTV 설치 현황
+* 자치구별 범죄 통계
+* 자치구별 평균 소득 자료
 
-## 🔍 Features
+## 🔍 주요 기능
 
-- **Interactive Charts**: Hover effects and detailed tooltips
-- **Multi-language Navigation**: Korean interface with clear visual indicators
-- **Responsive Design**: Optimized for various screen sizes
-- **Cross-platform Compatibility**: Works across different browsers
+* **인터랙티브 차트**: 마우스 오버 시 세부 정보 표시
+* **다국어 네비게이션**: 한국어 UI 제공
+* **반응형 디자인**: 모바일 및 다양한 화면 크기 대응
+* **크로스 브라우징 지원**: 다양한 브라우저 호환
 
-## 📊 Statistical Methods
+## 📊 통계 기법
 
-- **Pearson Correlation Coefficient**: Measuring linear relationships
-- **Scatter Plot Regression**: Trend line analysis
-- **Heatmap Visualization**: Multi-variable correlation display
-- **Time Series Analysis**: Temporal pattern identification
+* **피어슨 상관계수**: 변수 간 선형 관계 측정
+* **산점도 회귀 분석**: 추세선 시각화
+* **히트맵 분석**: 다변수 상관관계 시각화
+* **시계열 분석**: 시간에 따른 범죄 변화 패턴 확인
 
-## 🎨 Design Principles
+## 🎨 디자인 원칙
 
-- **Data-driven Storytelling**: Clear narrative through visualizations
-- **Color Coding**: Intuitive color schemes for data representation
-- **Interactive Elements**: User-friendly navigation and exploration
-- **Accessibility**: Clear labels and readable fonts
+* **데이터 기반 스토리텔링**: 시각화를 통한 명확한 내러티브
+* **색상 구분**: 직관적인 색상 체계 적용
+* **상호작용 요소**: 사용자 친화적 탐색 제공
+* **접근성 강화**: 명확한 레이블, 가독성 높은 폰트 사용
 
-## 🤝 Contributing
+## 🤝 기여 방법
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. 프로젝트를 Fork합니다.
+2. 브랜치를 생성합니다 (`git checkout -b feature/AmazingFeature`)
+3. 변경 사항을 커밋합니다 (`git commit -m 'Add some AmazingFeature'`)
+4. 브랜치를 푸시합니다 (`git push origin feature/AmazingFeature`)
+5. Pull Request를 생성합니다
 
-## 📊 Future Enhancements
+## 📊 향후 개선 사항
 
-- [ ] Add population density correlation analysis
-- [ ] Include seasonal crime pattern analysis
-- [ ] Implement machine learning predictions
-- [ ] Add real-time data integration
-- [ ] Expand to other Korean cities
+* [ ] 인구 밀도와의 상관관계 분석
+* [ ] 계절별 범죄 패턴 분석
+* [ ] 머신러닝 기반 범죄 예측
+* [ ] 실시간 데이터 연동
+* [ ] 타 도시(부산, 대구 등)로 범위 확대
 
-## 📝 License
+## 📝 라이선스
 
-This project is distributed under the MIT License. See `LICENSE` file for more information.
+이 프로젝트는 MIT 라이선스로 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참고하세요.
 
+## 🙏 감사의 말
 
-
-## 🙏 Acknowledgments
-
-- Seoul Metropolitan Government for providing open data
-- Chart.js, Highcharts, and Google Charts communities
-- Mapbox for geographic visualization capabilities
+* 서울특별시 및 열린데이터 광장에 감사드립니다
+* Chart.js, Highcharts, Google Charts 커뮤니티에 감사드립니다
+* Mapbox의 지도 시각화 기술에 감사드립니다
 
 ---
-
-⭐ If this project helped you, please give it a star!
